@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Bar chart of the share of patients who started treatment by referral source: existing patient 85 percent, dentist 78, family or friend 72, social media 65, online search 58">
+  <rect width="400" height="300" fill="#F7F9FC"/>
+  <text x="24" y="36" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#111111">Started treatment, by referral source</text>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="13" fill="#4A4A4A">
+    <text x="24" y="81">Existing patient</text>
+    <text x="24" y="125">Dentist</text>
+    <text x="24" y="169">Family / friend</text>
+    <text x="24" y="213">Social media</text>
+    <text x="24" y="257">Online search</text>
+  </g>
+
+  <!-- bars: 100% = 220px, starting at x=140 -->
+  <g fill="#1E6FE0">
+    <rect x="140" y="64" width="187" height="24" rx="4"/>
+    <rect x="140" y="108" width="172" height="24" rx="4"/>
+    <rect x="140" y="152" width="158" height="24" rx="4"/>
+    <rect x="140" y="196" width="143" height="24" rx="4"/>
+    <rect x="140" y="240" width="128" height="24" rx="4"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#111111">
+    <text x="335" y="81">85%</text>
+    <text x="320" y="125">78%</text>
+    <text x="306" y="169">72%</text>
+    <text x="291" y="213">65%</text>
+    <text x="276" y="257">58%</text>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SentinelPi — What This Project Is</title>
+<style>
+:root{
+  --bg:#081018;--panel:#101923;--border:#263646;
+  --text:#e7eef6;--muted:#9aabba;--accent:#61c0ff;--accent2:#f0b44d;--danger:#ff746f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+.wrap{max-width:820px;margin:auto;padding:64px 32px 80px}
+.kicker{color:var(--accent2);font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:38px;line-height:1.15;margin:12px 0 20px;color:white}
+p{font-size:17px;color:var(--text);margin:0 0 18px}
+.muted{color:var(--muted)}
+.notice{border-left:4px solid var(--danger);background:rgba(255,116,111,.07);padding:14px 18px;margin:26px 0;border-radius:6px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}
+.box{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px}
+.box h3{margin:0 0 8px;color:white;font-size:15px}
+.box p{margin:0;color:var(--muted);font-size:14px}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:29px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Raspberry Pi 4 + OpenWrt · isolated student security lab</div>
+  <h1>What SentinelPi Is</h1>
+  <p>
+    SentinelPi is a small, self-contained cybersecurity lab built around a Raspberry Pi 4. The Pi is turned into
+    the lab's own security appliance — it routes traffic, separates the lab from any outside network, hands out
+    addresses, watches traffic for suspicious activity, and keeps a record of everything that happens so it can
+    be reviewed later.
+  </p>
+  <p>
+    Alongside the Pi, the lab includes an authorized "attacker" machine and an intentionally vulnerable "victim"
+    machine. These let you generate realistic attacks in a safe, contained way and then practice noticing,
+    investigating, and responding to them — the same loop a real security team follows, just at a scale you can
+    run on a desk.
+  </p>
+  <p>
+    A separate monitoring machine collects logs and evidence over time, so the Pi itself doesn't need to hold
+    everything, and so a reviewer or instructor can look back at what was detected and how it was handled.
+  </p>
+  <div class="grid">
+    <div class="box"><h3>SentinelPi</h3><p>The Raspberry Pi 4 running OpenWrt. It acts as gateway, firewall/NAT device, DHCP/DNS service, intrusion detection sensor, and logging point.</p></div>
+    <div class="box"><h3>Attacker + Victim</h3><p>An authorized lab VM plays the attacker; an intentionally vulnerable VM plays the victim. Together they produce realistic traffic to detect and investigate.</p></div>
+    <div class="box"><h3>Monitor + Evidence</h3><p>A separate monitoring VM stores logs and security data, alongside packet captures, reports, and documentation from each exercise.</p></div>
+  </div>
+  <p class="muted">
+    In short: it's a hands-on, isolated environment for learning how networks are secured, monitored, attacked
+    (safely), and defended — with every stage producing evidence you can point to afterward.
+  </p>
+  <div class="notice"><b>Safety rule:</b> This project is designed for an isolated educational lab. It should be kept physically and logically separate from any production or organizational network, and attack exercises should only ever be run against systems within the lab itself.</div>
+  <footer>
+    <b>Source basis:</b> SentinelPi Complete Implementation Guide. This page is a short, overview-only summary of what the project is — it intentionally leaves out the phase-by-phase steps and commands from the full guide.
+  </footer>
+</div>
+</body>
+</html>

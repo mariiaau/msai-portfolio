@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event-Ready Skills Library — Oskar Godoy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+  .detail-section{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .tag{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:5px 14px;font-size:13px;color:var(--ink-soft);font-weight:600}
+  .back{display:inline-block;margin-bottom:32px;color:var(--blue);font-weight:600;font-size:14px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="badge" href="index.html">Oskar Godoy</a>
+  <a class="pill" href="index.html#projects">← Projects</a>
+  <a class="pill" href="../../">All students</a>
+  <span class="spacer"></span>
+  <a class="pill" href="https://atlantisuniversity.edu/program/master-of-science-in-artificial-intelligence/" target="_blank" rel="noopener">MS in AI</a>
+</nav>
+
+<div class="wrap">
+  <a class="back" href="index.html#projects">← Back to projects</a>
+
+  <h1>Event-Ready Skills Library</h1>
+  <p class="quote">A set of single-purpose Claude skills — plus one runner that reads an email thread and calls the others to produce a whole event package.</p>
+
+  <div class="detail-section">
+    <h2>What it is</h2>
+    <p>A library of Claude skills for producing event materials for Atlantis University. Four flyer skills each carry one school's brand (Business, Education, Health, Technology) and interview the user before drawing. An image skill generates unique on-brand images, and a landing-page skill writes ready-to-paste prompts. A "runner" skill ties them together.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>What I did</h2>
+    <p>I built each skill to do one job well, then wrote <strong>event-ready-generator</strong>, a runner that reads an event email thread, extracts the brief once (title, date, speaker, hosting school), and calls the right flyer skill, the image skill, and the landing-page skill in order. Two design rules matter: the flyer's color is read from the hosting school named in the thread — never guessed from the topic — and every image uses a fresh random seed plus a run-ID, so two people can never generate the same one.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>What came out</h2>
+    <p>From a single email thread, the chain produces an on-brand flyer, three unique images, and the three prompts that build a matching landing page. Repeatable design work became a repeatable, reliable pipeline instead of a one-off effort each time.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>Tools and technologies</h2>
+    <div class="tag-row">
+      <span class="tag">Claude skills (SKILL.md)</span>
+      <span class="tag">Skill composition</span>
+      <span class="tag">Python</span>
+      <span class="tag">matplotlib</span>
+      <span class="tag">Prompt engineering</span>
+    </div>
+  </div>
+
+  <footer>MS in Artificial Intelligence · Atlantis University</footer>
+</div>
+
+<script src="../../assets/feedback.js" defer></script>
+</body>
+</html>

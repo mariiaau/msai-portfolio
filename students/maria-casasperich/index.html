@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ========== EDIT 1 of 5 — your name in the browser tab ========== -->
+<title>Maria Paula Casas — MS in Artificial Intelligence</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+/* Phone only: show my name and what I do first, then the photo, then the links. */
+@media (max-width:860px){
+  .cols{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .cols aside,.cols main{display:contents}
+  .cols h1{order:1;margin:0 0 12px}
+  .cols .quote{order:2;margin:0 0 24px}
+  .cols .photo-card{order:3}
+  .cols .rail-link{order:4}
+  .cols main > :not(h1):not(.quote){order:5}
+}
+/* A project card wrapped in a link should look and behave like the plain cards. */
+.card-link{color:inherit;text-decoration:none;display:block;border-radius:12px}
+.card-link:hover .card{box-shadow:0 4px 14px rgba(16,24,40,.10);border-color:var(--blue)}
+.card-link:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <!-- EDIT 1 — your name here too -->
+  <a class="badge" href="#top">Maria Paula Casas</a>
+  <a class="pill" href="#projects">Projects</a>
+  <a class="pill" href="#education">Education &amp; Experience</a>
+  <a class="pill" href="../../">All students</a>
+  <span class="spacer"></span>
+  <a class="pill" href="https://atlantisuniversity.edu/program/master-of-science-in-artificial-intelligence/" target="_blank" rel="noopener">MS in AI</a>
+</nav>
+
+<div class="wrap" id="top">
+  <div class="cols">
+
+    <!-- ================= LEFT RAIL ================= -->
+    <aside>
+      <!-- ===== EDIT 2 of 5 — replace photo.jpg in this folder with your own ===== -->
+      <div class="photo-card">
+        <img src="photo.jpg" alt="Photograph of Maria Paula Casas">
+      </div>
+
+      <!-- ===== EDIT 3 of 5 — your four links. Every href must start with https:// ===== -->
+      <a class="rail-link" href="https://www.linkedin.com/in/maria-paula-casas-a5077a154/">LinkedIn profile</a>
+      <a class="rail-link" href="https://github.com/mariacasasperich-creator">GitHub profile</a>
+      <a class="rail-link" href="resume.pdf">Résumé</a>
+      <a class="rail-link" href="https://www.plenah.com">Plenah</a>
+      <a class="rail-link" href="mailto:hello@plenah.com">hello@plenah.com</a>
+      <a class="rail-link" href="https://www.instagram.com/plenah_/">Instagram @plenah_</a>
+    </aside>
+
+    <!-- ================= MAIN COLUMN ================= -->
+    <main>
+      <!-- EDIT 1 — and here -->
+      <h1>Maria Paula Casas</h1>
+
+      <!-- ===== EDIT 4 of 5 — one or two true sentences. Not a job title. ===== -->
+      <p class="quote">
+        I work in marketing, content creation, event production, and brand experiences. I also
+        have a background in coaching, wellness, and business management, and I'm currently
+        integrating artificial intelligence into my work to create more innovative, human-centered,
+        and strategic projects. Creating with intention, connecting with purpose.
+      </p>
+
+      <!-- ===== EDIT 5 of 5 — four project cards ===== -->
+      <h2 id="projects">Current Projects</h2>
+      <div class="cards">
+
+        <a class="card-link" href="https://marsh-gondola-0bb.notion.site/Skills-Showcase-MARIA-PAULA-3ce7a6e9577b8102a975d02018beea5a" target="_blank" rel="noopener">
+        <article class="card">
+          <img src="project-skill-builder.jpg" alt="Illustration of a toolbox and a puzzle piece connected to a chat bubble">
+          <h3>Skill Builder</h3>
+          <p>Skill Builder is a class project about building a skill for Claude. I learned how to build a skill and then built one. What came out is a skill I created for Claude — click the card to see the notes.</p>
+        </article>
+        </a>
+
+        <a class="card-link" href="https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/53" target="_blank" rel="noopener">
+        <article class="card">
+          <img src="project-github.jpg" alt="Illustration of a main line with branches that split off and merge back">
+          <h3>GitHub</h3>
+          <p>This project is about version control, which keeps a history of every change made to a set of files. I made my own branch of the class website, added my page, saved it in commits and sent it to GitHub. What came out is this page, which went live on the class site when the instructor merged my pull request #53 — click the card to see it.</p>
+        </article>
+        </a>
+
+        <article class="card">
+          <img src="project-more-memory.jpg" alt="Illustration of a notebook with a bookmark connected to a chat bubble">
+          <h3>More Memory</h3>
+          <p>More Memory is a project about making Claude's memory permanent. I used Notion as the place where the memory is kept. What came out is a memory for Claude that stays in Notion and does not disappear.</p>
+        </article>
+
+      </div>
+
+      <!-- ===== Thursday: fill these in ===== -->
+      <h2 id="education">Education &amp; Experience</h2>
+      <div class="split">
+        <div>
+          <h3>Education</h3>
+          <ul class="chain">
+            <li>MS in Artificial Intelligence<div class="where">Atlantis University</div></li>
+            <li>Master in Marketing and Digital Commerce<div class="where">EAE, Madrid, Spain · 2019–2021</div></li>
+            <li>Master in Coaching &amp; Leadership<div class="where">Universidad de Barcelona · 2018–2019</div></li>
+            <li>Degree in Pre-School Education<div class="where">Universidad Rafael Belloso Chacín · 2010–2013</div></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Experience</h3>
+          <ul class="chain">
+            <li>Event Designer<div class="where">Two Brothers Miami Playground, Miami, FL · Aug 2025 – Jun 2026</div></li>
+            <li>Logistics &amp; Stylist Coordinator<div class="where">Maluma, Los 40 Premios 2024, Barcelona, Spain · Oct – Dec 2024</div></li>
+            <li>Executive Assistant<div class="where">Miami Wheels, Miami, FL · Jun 2023 – Jul 2025</div></li>
+            <li>Founder<div class="where">Plenah Market, Miami, FL · Oct 2021 – present</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <footer>
+        MS in Artificial Intelligence · Atlantis University
+      </footer>
+    </main>
+
+  </div>
+</div>
+
+<script src="../../assets/feedback.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OWN Carpe Diem RAG Assistant — Oskar Godoy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+  .detail-section{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .tag{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:5px 14px;font-size:13px;color:var(--ink-soft);font-weight:600}
+  .back{display:inline-block;margin-bottom:32px;color:var(--blue);font-weight:600;font-size:14px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="badge" href="index.html">Oskar Godoy</a>
+  <a class="pill" href="index.html#projects">← Projects</a>
+  <a class="pill" href="../../">All students</a>
+  <span class="spacer"></span>
+  <a class="pill" href="https://atlantisuniversity.edu/program/master-of-science-in-artificial-intelligence/" target="_blank" rel="noopener">MS in AI</a>
+</nav>
+
+<div class="wrap">
+  <a class="back" href="index.html#projects">← Back to projects</a>
+
+  <h1>OWN Carpe Diem RAG Assistant</h1>
+  <p class="quote">An assistant that answers from OWN Carpe Diem's own documents — and cites where each answer came from.</p>
+
+  <div class="detail-section">
+    <h2>What it is</h2>
+    <p>A retrieval-augmented generation (RAG) assistant for OWN Carpe Diem, my wellness venture. Instead of answering from a model's general memory — which can invent details — it retrieves the most relevant passages from the company's own material and answers only from those, with citations back to the source.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>What I did</h2>
+    <p>I assembled a document collection for OWN Carpe Diem and split it into passages. Each passage is turned into an embedding with a sentence-transformers model, and the embeddings are stored in a vector index for fast similarity search. When a question comes in, the system embeds it, retrieves the top matching passages, and passes them to the model as grounding, so the answer stays tied to real sources and each claim can be traced back.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>What came out</h2>
+    <p>A question-answering assistant that is grounded rather than fluent-but-wrong. Answers come with the passages that support them, which makes the output trustworthy enough to actually use — the whole point of the "fluent is not the same as correct" principle.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>Tools and technologies</h2>
+    <div class="tag-row">
+      <span class="tag">Python</span>
+      <span class="tag">sentence-transformers</span>
+      <span class="tag">FAISS (vector search)</span>
+      <span class="tag">RAG</span>
+      <span class="tag">Anthropic API</span>
+    </div>
+  </div>
+
+  <footer>MS in Artificial Intelligence · Atlantis University</footer>
+</div>
+
+<script src="../../assets/feedback.js" defer></script>
+</body>
+</html>

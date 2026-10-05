@@ -27,10 +27,17 @@
   </p>
 
   <h2>Summer &quot;D&quot; 2026 &middot; MAI 500</h2>
-  <div class="people" id="people"></div>
-  <p class="lede" id="empty" style="display:none">
+  <div class="people" id="people-sd26"></div>
+  <p class="lede" id="empty-sd26" style="display:none">
     Pages appear here as they are published. Nothing yet.
   </p>
+
+  <h2>Fall &quot;A&quot; 2026 &middot; MAI 500 &mdash; FLEX</h2>
+  <div class="people" id="people-fa26"></div>
+  <p class="lede" id="empty-fa26" style="display:none">
+    Pages appear here as they are published. Nothing yet.
+  </p>
+
   <noscript><p class="lede">Turn on JavaScript to see the list of student pages.</p></noscript>
 
   <footer>
@@ -40,19 +47,30 @@
 </div>
 
 <script>
-/* The list builds itself from whatever is in students/ on the live site.
-   Merge a pull request and the card appears — there is nothing to edit here. */
+/* The lists build themselves from whatever is in students/ on the live site.
+   Merge a pull request and the card appears — there is nothing to edit here.
+
+   One exception: which cohort a page belongs to. A folder name cannot say that, so
+   every closed cohort lists its own folders below, and the open one (slugs: null)
+   takes everything that is not claimed by a cohort above it. To open a new cohort,
+   move the current open list into its own entry and add the new one at the bottom. */
 (function () {
   var REPO = 'rodolfocapdevilla-au/msai-portfolio';
-  var grid = document.getElementById('people');
-  var empty = document.getElementById('empty');
 
-  // Used only if the GitHub API is unreachable or rate-limited.
-  var FALLBACK = [
-    'denise-quimi-fonseca','juan-pablo-arnedo','maria-paula-casas','mariia-osokina',
-    'nour-boussaffa','rogerio-luis-fontanario','sofia-moreno-bendala',
-    'valentina-ramirez-chaparro','walid-abdelwahab','yaya-boubacar-sow'
+  var COHORTS = [
+    { id: 'sd26', slugs: [
+        'denise-quimi','example-page','juan-pablo-arnedo','maria-casasperich',
+        'mariia-osokina','nour-el-ain-boussaffa','rogerio-fontanario','sofia-moreno',
+        'valentina-ramirez','walid-abdelwahab','yaya-sow'
+      ] },
+    { id: 'fa26', slugs: null }
   ];
+
+  /* Used only if the GitHub API is unreachable or rate-limited. A page published
+     since this list was last touched will be missing until the API answers again. */
+  var FALLBACK = COHORTS.reduce(function (all, c) {
+    return c.slugs ? all.concat(c.slugs) : all;
+  }, []);
 
   function listFolders() {
     return fetch('https://api.github.com/repos/' + REPO + '/contents/students')
@@ -79,36 +97,61 @@
       .catch(function () { return null; });
   }
 
-  function render(people) {
+  function card(p) {
+    var a = document.createElement('a');
+    a.className = 'person';
+    a.href = 'students/' + p.slug + '/';
+    var img = document.createElement('img');
+    img.src = 'students/' + p.slug + '/photo.jpg';
+    img.alt = '';
+    img.loading = 'lazy';
+    var n = document.createElement('div');
+    n.className = 'name';
+    n.textContent = p.name;
+    var l = document.createElement('div');
+    l.className = 'line';
+    l.textContent = p.line || 'MS in Artificial Intelligence';
+    a.appendChild(img); a.appendChild(n); a.appendChild(l);
+    return a;
+  }
+
+  function renderCohort(cohort, people) {
+    var grid = document.getElementById('people-' + cohort.id);
+    var empty = document.getElementById('empty-' + cohort.id);
+    if (!grid) { return; }
     people = people.filter(Boolean).sort(function (a, b) {
       return a.name.localeCompare(b.name);
     });
-    if (!people.length) { empty.style.display = ''; return; }
-    people.forEach(function (p) {
-      var a = document.createElement('a');
-      a.className = 'person';
-      a.href = 'students/' + p.slug + '/';
-      var img = document.createElement('img');
-      img.src = 'students/' + p.slug + '/photo.jpg';
-      img.alt = '';
-      img.loading = 'lazy';
-      var n = document.createElement('div');
-      n.className = 'name';
-      n.textContent = p.name;
-      var l = document.createElement('div');
-      l.className = 'line';
-      l.textContent = p.line || 'MS in Artificial Intelligence';
-      a.appendChild(img); a.appendChild(n); a.appendChild(l);
-      grid.appendChild(a);
-    });
+    if (!people.length) { if (empty) { empty.style.display = ''; } return; }
+    people.forEach(function (p) { grid.appendChild(card(p)); });
+  }
+
+  function cohortOf(slug) {
+    for (var i = 0; i < COHORTS.length; i++) {
+      if (COHORTS[i].slugs && COHORTS[i].slugs.indexOf(slug) !== -1) { return COHORTS[i]; }
+    }
+    for (var j = 0; j < COHORTS.length; j++) {
+      if (!COHORTS[j].slugs) { return COHORTS[j]; }
+    }
+    return null;
   }
 
   listFolders()
     .then(function (slugs) { return Promise.all(slugs.map(readPage)); })
-    .then(render)
-    .catch(function () { empty.style.display = ''; });
+    .then(function (people) {
+      COHORTS.forEach(function (c) {
+        renderCohort(c, people.filter(function (p) { return p && cohortOf(p.slug) === c; }));
+      });
+    })
+    .catch(function () {
+      COHORTS.forEach(function (c) {
+        var empty = document.getElementById('empty-' + c.id);
+        if (empty) { empty.style.display = ''; }
+      });
+    });
 })();
 </script>
 
+<script src="assets/feedback.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ========== EDIT 1 of 5 — your name in the browser tab ========== -->
+<title>Andre Casagrande Rosenberg — MS in Artificial Intelligence</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <!-- EDIT 1 — your name here too -->
+  <a class="badge" href="#top">Andre Casagrande Rosenberg</a>
+  <a class="pill" href="#projects">Projects</a>
+  <a class="pill" href="#education">Education &amp; Experience</a>
+  <a class="pill" href="../../">All students</a>
+  <span class="spacer"></span>
+  <a class="pill" href="https://atlantisuniversity.edu/program/master-of-science-in-artificial-intelligence/" target="_blank" rel="noopener">MS in AI</a>
+</nav>
+
+<div class="wrap" id="top">
+  <div class="cols">
+
+    <!-- ================= LEFT RAIL ================= -->
+    <aside>
+      <!-- ===== EDIT 2 of 5 — replace photo.jpg in this folder with your own ===== -->
+      <div class="photo-card">
+        <img src="photo.jpg" alt="Photograph of Andre Casagrande Rosenberg">
+      </div>
+
+      <!-- ===== EDIT 3 of 5 — your four links. Every href must start with https:// ===== -->
+      <a class="rail-link" href="https://www.linkedin.com/in/andrerosenberg" target="_blank" rel="noopener">LinkedIn profile</a>
+      <a class="rail-link" href="https://github.com/andrecasa1995" target="_blank" rel="noopener">GitHub profile</a>
+      <a class="rail-link" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a class="rail-link" href="https://www.instagram.com/casagrandeandre/" target="_blank" rel="noopener">Instagram profile</a>
+      <a class="rail-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rosenbergandre.c@gmail.com" target="_blank" rel="noopener">Email me</a>
+    </aside>
+
+    <!-- ================= MAIN COLUMN ================= -->
+    <main>
+      <!-- EDIT 1 — and here -->
+      <h1>Andre Casagrande Rosenberg</h1>
+
+      <!-- ===== EDIT 4 of 5 — one or two true sentences. Not a job title. ===== -->
+      <p class="quote">
+        Civil engineer applying artificial intelligence to real-world infrastructure and visual data problems.
+      </p>
+
+      <!-- ===== EDIT 5 of 5 — four project cards ===== -->
+      <h2 id="projects">Current Projects</h2>
+      <div class="cards">
+
+        <article class="card">
+          <img src="project-concrete-crack.jpg" alt="Concrete surface samples showing no visible crack and a visible crack">
+          <h3>Concrete Crack Image Classification</h3>
+          <p>A computer-vision project that classifies concrete surfaces as having a visible crack or no visible crack using MobileNetV2 transfer learning. I prepared a 40,000-image dataset with an 80/20 train-test split, resized and normalized the images, added training augmentation, and ran the PyTorch workflow locally with CUDA support. The recorded validation run confirmed that the data pipeline, preprocessing, model training, evaluation, and plotting worked together and that accuracy improved while loss decreased.</p>
+        </article>
+
+        <article class="card">
+          <img src="project-skills-showcase.jpg" alt="Screenshot of a local web page displaying AI coursework skills">
+          <h3>Local AI Skills Showcase</h3>
+          <p>A local web page that presents six AI-related skills I built in earlier coursework. I organized the skills into three categories, kept the data in a separate JavaScript file, and built the page with plain HTML, CSS, and JavaScript so it works by double-clicking index.html with no server. The result is an offline browser page that renders all six skill cards without external dependencies.</p>
+        </article>
+
+        <article class="card">
+          <img src="project-self-attention.jpg" alt="Input matrix and self-attention output from a PyTorch exercise">
+          <h3>Self-Attention in PyTorch</h3>
+          <p>A PyTorch exercise that implements scaled dot-product self-attention for a small set of input tokens. I wrote the Query, Key, and Value matrix computation and the self-attention function, then tested them on a three-token example. The implementation produced a 3-by-2 output matrix with rows [1.2840, 2.4359], [1.5760, 2.1440], and [1.4011, 2.2033].</p>
+        </article>
+
+      </div>
+
+      <!-- ===== Thursday: fill these in ===== -->
+      <h2 id="education">Education &amp; Experience</h2>
+      <div class="split">
+        <div>
+          <h3>Education</h3>
+          <ul class="chain">
+            <li>MS in Artificial Intelligence<div class="where">Atlantis University · 2025–2027</div></li>
+            <li>Bachelor of Civil Engineering<div class="where">Universidade Vila Velha · Completed August 2020</div></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Experience</h3>
+          <ul class="chain">
+            <li>Owner &amp; Responsible Civil Engineer<div class="where">BR Solos Engenharia Ltda. · June 2023–Present</div></li>
+            <li>Civil Engineer<div class="where">Autovia Engenharia Ltda. · Aug 2020–May 2021; Dec 2022–Aug 2023</div></li>
+            <li>Partner &amp; Responsible Civil Engineer<div class="where">T&amp;R Engenharia Ltda. · Apr 2021–Jan 2023</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <footer>
+        MS in Artificial Intelligence · Atlantis University
+      </footer>
+    </main>
+
+  </div>
+</div>
+
+<script src="../../assets/feedback.js" defer></script>
+</body>
+</html>

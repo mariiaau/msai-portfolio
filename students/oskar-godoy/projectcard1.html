@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFE Property Maintenance Bot — Oskar Godoy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+  .detail-section{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .tag{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:5px 14px;font-size:13px;color:var(--ink-soft);font-weight:600}
+  .back{display:inline-block;margin-bottom:32px;color:var(--blue);font-weight:600;font-size:14px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="badge" href="index.html">Oskar Godoy</a>
+  <a class="pill" href="index.html#projects">← Projects</a>
+  <a class="pill" href="../../">All students</a>
+  <span class="spacer"></span>
+  <a class="pill" href="https://atlantisuniversity.edu/program/master-of-science-in-artificial-intelligence/" target="_blank" rel="noopener">MS in AI</a>
+</nav>
+
+<div class="wrap">
+  <a class="back" href="index.html#projects">← Back to projects</a>
+
+  <h1>KFE Property Maintenance Bot</h1>
+  <p class="quote">A WhatsApp bot that reads dozens of property groups and turns the maintenance messages I'm tagged in into a clean, logged record.</p>
+
+  <div class="detail-section">
+    <h2>What it is</h2>
+    <p>KFE manages short-term-rental properties, and every building has its own WhatsApp group where issues get reported — a leak, a broken lock, a missing item. The important messages are the ones where I'm tagged, and they were easy to miss across ~40 groups. This bot reads the groups, finds the messages that tag me, and logs each maintenance issue to a Google Sheet automatically.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>What I did</h2>
+    <p>I built the bot on Baileys, a WhatsApp library that connects over WebSocket without needing a browser, after an earlier browser-based approach proved unreliable. It listens for new messages, checks whether the owner was tagged, and passes the message to Claude to classify it (what kind of issue, which property, urgency) and write a short summary. The result is appended to a Google Sheet through a service-account connection. It runs on a schedule and keeps a small state file so the same message is never logged twice.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>What came out</h2>
+    <p>A working pipeline: WhatsApp groups in, a structured maintenance log out. Instead of scrolling dozens of chats, KFE gets one sheet where every tagged issue is captured, summarized, and dated — ready to assign and track.</p>
+  </div>
+
+  <div class="detail-section">
+    <h2>Tools and technologies</h2>
+    <div class="tag-row">
+      <span class="tag">Node.js</span>
+      <span class="tag">Baileys (WhatsApp)</span>
+      <span class="tag">Anthropic API (Claude)</span>
+      <span class="tag">Google Sheets API</span>
+      <span class="tag">node-cron</span>
+    </div>
+  </div>
+
+  <footer>MS in Artificial Intelligence · Atlantis University</footer>
+</div>
+
+<script src="../../assets/feedback.js" defer></script>
+</body>
+</html>

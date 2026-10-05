@@ -1,0 +1,3 @@
+# Goal
+
+A marketing manager at a beauty or fragrance brand, who already follows Maria Paula Casas on social media and has the creative concept for her next launch decided, taps the link on her phone and reads only Maria's page — she is not comparing anyone else. Within a minute, without hunting for it, she understands that Maria produces brand events, sees a concrete example she can picture, such as the Givenchy perfume launch where Maria added logo details on the mirrors and the matcha cups inside a wellness experience, and finishes convinced that Maria can turn a launch concept that is already decided into a carefully executed experience. She leaves the page and writes to Maria directly about her next event, by email at hello@plenah.com or on Instagram at @plenah_.
